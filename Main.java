@@ -1,59 +1,54 @@
 public class Main {
     public static void main(String[] args) {
-        Yeger y = new Yeger("Йегер в форме титана", 150);
-        Mikasa m = new Mikasa("Микаса", 100);
-        Levi l = new Levi("капитан Леви", 120);
+        User u = new User();
 
-        y.attack();
-        y.NewForm();
+        u.setUsername("Mansur5242");
+        u.setPassword("123");
+        u.setEmail("mdadashev13@gmail.com");
+        u.setBirthDate("2013-08-25");
 
-        m.attack();
-        m.Defence();
-
-        l.attack();
-        l.shootUPM();
+        System.out.println("Register");
+        System.out.println("username: " + u.getUsername());
+        System.out.println("password: " + u.getPassword());
+        System.out.println("email: " + u.getEmail());
+        System.out.println("date: " + u.getBirthDate());
     }
 }
+class User {
+    private String username;
+    private String password;
+    private String email;
+    private String date;
 
-class Hero {
-    String name;
-    int health;
-
-    public Hero(String heroName, int heroHealth) {
-        name = heroName;
-        health = heroHealth;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void attack() {
-        System.out.println(name + " атакует");
-    }
-}
-
-class Yeger extends Hero {
-    public Yeger(String n, int h) {
-        super(n, h);
+    public String getUsername() {
+        return username;
     }
 
-    public void NewForm() {
-        System.out.println(name + " обрел 2 форму");
-    }
-}
-
-class Mikasa extends Hero {
-    public Mikasa(String n, int h) {
-        super(n, h);
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public void Defence() {
-        System.out.println(name + " страхует Йегера чтобы его не съел титан");
-    }
-}
-class Levi extends Hero {
-    public Levi(String n, int h) {
-        super(n, h);
+    public String getPassword() {
+        return password;
     }
 
-    public void shootUPM() {
-        System.out.println(name + " зацепился с помощью УПМ на шею титана");
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.date = birthDate;
+    }
+
+    public String getBirthDate() {
+        return date;
     }
 }
