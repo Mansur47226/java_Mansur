@@ -1,12 +1,17 @@
-import java.io.File;
+import java.util.HashSet;
 
 public class Main {
     public static void main(String[] args) {
-        File myfile = new File("/Users/samirdadashov/Desktop/newfile");
+        HashSet<String> classes = new HashSet<>();
+        classes.add("1 класс");
+        classes.add("2 класс");
+        classes.add("3 класс");
+        classes.add("4 класс");
+        classes.add("5 класс");
 
-        System.out.println(myfile.length());
-        System.out.println(myfile.getName());
+        boolean isAdded = classes.add("11 класс");
 
-
+        System.out.println("Хашсет " + classes);
+        System.out.println("Добавлен ли дублкат " + isAdded);
     }
 }
